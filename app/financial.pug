@@ -1,0 +1,92 @@
+extends layouts/default
+
+block content
+  include includes/header
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        ol.breadcrumb
+          li: a(href='/dashboard.html') Beranda
+          li: a(href='/transaction.html') Transaksi
+          li.active Pembayaran Finansial
+
+        div
+          ul.nav.nav-tabs
+            li.active: a(href='#cc' data-toggle='tab') Kartu Kredit
+            li: a(href='#tax' data-toggle='tab') Pajak
+            li: a(href='#installment' data-toggle='tab') Angsuran
+            li: a(href='#insurance' data-toggle='tab') Asuransi
+
+          div.tab-content
+            div.tab-pane.active#cc
+              form.form-horizontal
+                .form-group
+                  label.col-md-2.control-label Dari Rekening
+                  .col-md-10
+                    select.form-control
+                      option Rekening Utama (00000000)
+
+                .form-group
+                  label.col-md-2.control-label Nama Bank
+                  .col-md-10
+                    select.form-control
+                      option Bank Kota
+                      option Bank Desa
+
+                .form-group
+                  label.col-md-2.control-label Nomor Kartu
+                  .col-md-10
+                    input.form-control(type='text' placeholder='    -    -    -    -')
+
+                .form-group
+                  label.col-md-2.control-label Jumlah
+                  .col-md-10
+                    input.form-control(type='text')
+
+                .form-group
+                  .col-md-offset-2.col-md-10
+                    input(type='checkbox')
+                    | Simpan
+
+                .form-group
+                  .col-md-2
+                    span.glyphicon.glyphicon-info-sign(data-toggle='tooltip' data-placement='bottom' title='Keterangan: Berikut merupakan suatu keterangan hehe')
+                  .col-md-10
+                    a.btn.btn-danger(href='/transfer.html') Batal
+                    a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
+
+            div.tab-pane#tax
+            div.tab-pane#installment
+            div.tab-pane#insurance
+
+  .modal.fade#token
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal')
+            span &times;
+          h4.modal-title Masukkan Token
+        .modal-body.form-horizontal
+          form
+            .form-group
+              label.col-md-4.control-label Token Internet Banking
+              .col-md-8
+                input.form-control(type='text')
+            .form-group
+              .col-md-8.col-md-offset-4
+                a.btn.btn-primary(data-dismiss='modal' data-toggle='modal' data-target='#transaksi-berhasil') Kirim
+
+  .modal.fade#transaksi-berhasil
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal')
+            span &times;
+          h4.modal-title Transaksi Favorit
+        .modal-body
+          h3.text-center Transfer
+          h2.text-center BERHASIL
+          h3.text-center Diproses
+        .modal-footer
+          a.btn.btn-default(href='/dashboard.html') Kembali ke Beranda

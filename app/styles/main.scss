@@ -38,3 +38,18 @@ $icon-font-path: '../fonts/';
     color: rgb(51, 51, 51);
   }
 }
+
+#transaksi-favorit {
+  .row {
+    margin-bottom: 2em;
+  }
+
+  button {
+    display: block;
+    margin: auto;
+  }
+}
+
+.glyphicon-info-sign {
+  font-size: 2em;
+}
