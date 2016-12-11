@@ -1,21 +1,38 @@
 extends layouts/default
 
 block content
-  .jumbotron
-    h1 &apos;Allo, MADAFAKA
-    p.lead Always a pleasure scaffolding your apps.
-    p: a.btn.btn-lg.btn-success(href='#') Splendid!
+  .container
+    .col-md-12
+      h1 Mandiri Internet Banking
+      .col-md-9
+        h2 Berita Terkini
+        p.lead Server Down Selamanya
+        p.lead 5 Desember 2015, 16:34
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-  .row.marketing
-    .col-lg-6
-      h4 HTML5 Boilerplate
-      p HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+        p.lead Server Down Selamanya
+        p.lead 5 Desember 2015, 16:34
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-      h4 Sass
-      p Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+        p.lead Server Down Selamanya
+        p.lead 5 Desember 2015, 16:34
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-      h4 Bootstrap
-      p Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
+        p.lead Server Down Selamanya
+        p.lead 5 Desember 2015, 16:34
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-      h4 Modernizr
-      p Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.
+      .col-md-3
+          .panel.panel-default
+            .panel-body
+              img(src='logo.png')
+              form
+                .form-group
+                  label User ID
+                  input.form-control(type='text' placeholder='User ID')
+                .form-group
+                  label PIN
+                  input.form-control(type='password' placeholder='PIN')
+                a.btn.btn-primary.login-btn(href='/dashboard.html') Masuk
+                br
+                a.btn.btn-warning.login-btn(href='/') Hapus

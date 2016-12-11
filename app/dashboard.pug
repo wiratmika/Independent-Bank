@@ -1,0 +1,45 @@
+extends layouts/default
+
+block content
+  include includes/header
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h2 Selamat datang di Mandiri internet, Niko Alhakim
+        p Anda terakhir masuk pada 1 Desember 2016 pukul 00:00
+        p Anda terakhir keluar pada 1 Desember 2016 pukul 00:00
+
+        .col-md-6
+          .well(data-toggle='modal' data-target='#aktivitas-transaksi')
+            h3.text-center Lihat Aktivitas Transaksi
+        .col-md-6
+          .well(data-toggle='modal' data-target='#transaksi-favorit')
+            h3.text-center Transaksi Favorit
+
+  .modal.fade#aktivitas-transaksi
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal')
+            span &times;
+          h4.modal-title Aktivitas Transaksi
+        .modal-body
+          form.form-inline
+            .form-group
+              .input-group
+                span.input-group-addon
+                  span.glyphicon.glyphicon-calendar
+                input.form-control(type='text' placeholder='Waktu awal')
+
+  .modal.fade#transaksi-favorit
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal')
+            span &times;
+          h4.modal-title Transaksi Favorit
+        .modal-body
+          p Konten mantab
+        .modal-footer
+          button.btn.btn-primary(data-dismiss='modal') Ubah

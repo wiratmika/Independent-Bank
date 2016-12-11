@@ -1,0 +1,146 @@
+extends layouts/default
+
+block content
+  include includes/header
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        ol.breadcrumb
+          li: a(href='/dashboard.html') Beranda
+          li: a(href='/transfer.html') Transfer
+          li.active Transfer Antar Rekening Mandiri
+
+        form.form-horizontal
+          .form-group
+            label.col-md-2.control-label Dari Rekening
+            .col-md-10
+              select.form-control
+                option Rekening Utama (00000000)
+
+          .form-group
+            label.col-md-2.control-label Jumlah
+            .col-md-10
+              input.form-control(type='text' placeholder='Nominal')
+              span.help-block dalam mata uang rekening tujuan
+
+          h4 Rekening Penerima
+          .form-group
+            label.col-md-2.control-label
+              input(type='radio' name='receiver' checked)
+              | Nomor rekening
+            .col-md-8
+              input.form-control(placeholder='Nomor Rekening')
+            .col-md-2
+              input.form-control(placeholder='Keterangan')
+              label
+                input(type='checkbox')
+                | Simpan
+
+          .form-group
+            label.col-md-2.control-label
+              input(type='radio' name='receiver')
+              | Dari Daftar Transfer
+            .col-md-10
+              select.form-control
+                option Rekening Ibu (00000001)
+                option Rekening Sekunder (00000002)
+
+          h4 Opsi Transfer
+          .form-group
+            label.col-md-2.control-label
+              input(type='radio' name='option' checked)
+              | Sekarang
+            .col-md-10
+              p.form-control-static 2 Desember 2015
+
+          .form-group
+            label.col-md-2.control-label
+              input(type='radio' name='option')
+              | Terjadwal
+            .col-md-10
+              .input-group
+                span.input-group-addon
+                  span.glyphicon.glyphicon-calendar
+                input.form-control(type='text')
+
+          .form-group
+            label.col-md-2.control-label
+              input(type='radio' name='option')
+              | Berkala
+            .col-md-10
+              .col-md-1
+                p Setiap
+              .col-md-4
+                input.form-control(type='text')
+              .col-md-5
+                select.form-control
+                  option Hari
+                  option Minggu
+                  option Bulan
+
+          .form-group
+            label.col-md-2.control-label
+              p Tanggal Transfer Pertama
+            .col-md-10
+              .input-group
+                span.input-group-addon
+                  span.glyphicon.glyphicon-calendar
+                input.form-control(type='text')
+
+          .form-group
+            label.col-md-2.control-label
+              p Tanggal Transfer Terakhir
+            .col-md-10
+              .input-group
+                span.input-group-addon
+                  span.glyphicon.glyphicon-calendar
+                input.form-control(type='text')
+
+          .form-group
+            label.col-md-2.control-label Berita
+            .col-md-10
+              input.form-control(type='text' placeholder='Berita')
+
+          .form-group
+            label.col-md-2.control-label Email Penerima
+            .col-md-10
+              input.form-control(type='email' placeholder='Email penerima')
+
+          .form-group
+            .col-md-offset-2.col-md-10
+              a.btn.btn-danger(href='/transfer.html') Batal
+              a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
+
+
+
+  .modal.fade#token
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal')
+            span &times;
+          h4.modal-title Masukkan Token
+        .modal-body.form-horizontal
+          form
+            .form-group
+              label.col-md-4.control-label Token Internet Banking
+              .col-md-8
+                input.form-control(type='text')
+            .form-group
+              .col-md-8.col-md-offset-4
+                a.btn.btn-primary(data-dismiss='modal' data-toggle='modal' data-target='#transaksi-berhasil') Kirim
+
+  .modal.fade#transaksi-berhasil
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal')
+            span &times;
+          h4.modal-title Transaksi Favorit
+        .modal-body
+          h3.text-center Transfer
+          h2.text-center BERHASIL
+          h3.text-center Diproses
+        .modal-footer
+          a.btn.btn-default(href='/dashboard.html') Kembali ke Beranda

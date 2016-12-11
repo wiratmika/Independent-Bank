@@ -1,0 +1,56 @@
+.header
+  nav.navbar-default.navbar-default
+    div.container-fluid
+      div.navbar-header
+        button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#main-navbar')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#')
+          img(src='/logo.png' alt="Mandiri Internet Banking")
+      div.collapse.navbar-collapse#main-navbar
+        ul.nav.navbar-nav.navbar-right
+          li: a(href='/dashboard.html') Beranda
+          li.dropdown
+            a(href='#') Rekening
+            ul.dropdown-menu
+              li: a(href='#') Rekening Umum
+              li: a(href='#') Rekening Online
+              li: a(href='#') Mandiri ClickPay
+              li: a(href='#') Mutasi Rekening
+          li.dropdown
+            a(href='#') Transfer
+            ul.dropdown-menu
+              li: a(href='/transfer.html') Transfer Rekening Mandiri
+              li: a(href='/transfer.html') Transfer Antar Bank
+              li: a(href='/transfer.html') Kliring
+              li: a(href='/transfer.html') Transfer Terjadwal
+          li.dropdown
+            a(href='#') Transaksi
+            ul.dropdown-menu
+              li.dropdown-header Pembayaran
+              li: a(href='#') Finansial
+              li: a(href='#') Utilitas
+              li: a(href='#') Auto Debit
+              li: a(href='#') Lain-lain
+              li.divider
+              li: a(href='#') Pembelian
+          li.dropdown
+            a(href='#') Uang Elektronik
+            ul.dropdown-menu
+              li.dropdown-header Mandiri E-Money
+              li: a(href='#') Single Top Up
+              li: a(href='#') Mass Top Up
+              li.divider
+              li: a(href='#') Mandiri E-Cash
+          li.dropdown
+            a(href='#') Pengaturan
+            ul.dropdown-menu
+              li: a(href='#') Administrasi
+              li: a(href='#') Personalisasi
+          li.dropdown
+            a(href='#') Informasi
+            ul.dropdown-menu
+              li: a(href='#') Fasilitas Layanan
+              li: a(href='#') FAQ
+          li: a(href='/') Logout

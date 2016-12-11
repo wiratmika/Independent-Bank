@@ -20,6 +20,12 @@ gulp.task('views', () => {
     .pipe(reload({stream: true}));
 });
 
+// For usage with GitHub Pages
+gulp.task('deploy', ['default'], () => {
+  return gulp.src('dist/**/*')
+    .pipe($.ghPages());
+});
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
