@@ -18,48 +18,48 @@ block content
             li: a(href='#installment' data-toggle='tab') Angsuran
             li: a(href='#insurance' data-toggle='tab') Asuransi
 
-          div.tab-content
-            div.tab-pane.active#cc
+          .tab-content
+            .tab-pane.active#cc
               form.form-horizontal
                 .form-group
-                  label.col-md-2.control-label Dari Rekening
-                  .col-md-10
+                  label.col-md-3.control-label Dari Rekening
+                  .col-md-9
                     select.form-control
                       option Rekening Utama (00000000)
 
                 .form-group
-                  label.col-md-2.control-label Nama Bank
-                  .col-md-10
+                  label.col-md-3.control-label Nama Bank
+                  .col-md-9
                     select.form-control
                       option Bank Kota
                       option Bank Desa
 
                 .form-group
-                  label.col-md-2.control-label Nomor Kartu
-                  .col-md-10
+                  label.col-md-3.control-label Nomor Kartu
+                  .col-md-9
                     input.form-control(type='text' placeholder='    -    -    -    -')
 
                 .form-group
-                  label.col-md-2.control-label Jumlah
-                  .col-md-10
+                  label.col-md-3.control-label Jumlah
+                  .col-md-9
                     input.form-control(type='text')
 
                 .form-group
-                  .col-md-offset-2.col-md-10
+                  .col-md-offset-3.col-md-9
                     input(type='checkbox')
                     | Simpan ke transaksi favorit
 
                 .form-group
-                  .col-md-2
+                  .col-md-3
                     span.glyphicon.glyphicon-info-sign(data-toggle='tooltip' data-placement='bottom' title='Keterangan: Berikut merupakan suatu keterangan hehe')
-                  .col-md-10
+                  .col-md-9
                     .button-transaction
                       a.btn.btn-danger(href='/transfer.html') Batal
                       a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
 
-            div.tab-pane#tax
-            div.tab-pane#installment
-            div.tab-pane#insurance
+            .tab-pane#tax
+            .tab-pane#installment
+            .tab-pane#insurance
 
   .modal.fade#token
     .modal-dialog

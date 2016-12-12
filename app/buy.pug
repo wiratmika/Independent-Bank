@@ -15,24 +15,24 @@ block content
           ul.nav.nav-tabs
             li.active: a(href='#voucher' data-toggle='tab') Voucher HP
 
-          div.tab-content
-            div.tab-pane.active#phone
+          .tab-content
+            .tab-pane.active#phone
               form.form-horizontal
                 .form-group
-                  label.col-md-2.control-label Dari Rekening
-                  .col-md-10
+                  label.col-md-3.control-label Dari Rekening
+                  .col-md-9
                     select.form-control
                       option Rekening Utama (00000000)
 
                 .form-group
-                  .radio.col-md-2
+                  .radio.col-md-3
                     label.control-label
                       input(type='radio' name='type' checked)
                       | Pembelian Langsung
 
                 .form-group
-                  label.col-md-2.control-label Penyedia Jasa
-                  .col-md-10
+                  label.col-md-3.control-label Penyedia Jasa
+                  .col-md-9
                     select.form-control
                       option Telkomsel
                       option Vodafone
@@ -40,12 +40,12 @@ block content
                       option Vasilkom
 
                 .form-group
-                  label.col-md-2.control-label Nomor Telepon
-                  .col-md-10
+                  label.col-md-3.control-label Nomor Telepon
+                  .col-md-9
                     input.form-control(type='text')
 
                 .form-group
-                  .radio.col-md-2
+                  .radio.col-md-3
                     label.control-label
                       input(type='radio' name='type')
                       | Pembelian Terdaftar
@@ -55,14 +55,14 @@ block content
                       option Pulsa selingkuhan
 
                 .form-group
-                  .col-md-offset-2.col-md-10
+                  .col-md-offset-3.col-md-9
                     input(type='checkbox')
                     | Simpan ke transaksi favorit
 
                 .form-group
-                  .col-md-2
+                  .col-md-3
                     span.glyphicon.glyphicon-info-sign(data-toggle='tooltip' data-placement='bottom' title='Keterangan: Berikut merupakan suatu keterangan hehe')
-                  .col-md-10
+                  .col-md-9
                     .button-transaction
                       a.btn.btn-danger(href='/transfer.html') Batal
                       a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
