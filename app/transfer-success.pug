@@ -1,0 +1,53 @@
+extends layouts/default
+
+block content
+  include includes/header
+
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        ol.breadcrumb
+          li: a(href='/dashboard.html') Beranda
+          li: a(href='/transfer.html') Transfer
+          li.active Transfer Antar Rekening Mandiri
+
+        table.table
+          tr
+            td Dari rekening
+            td Rekening Utama (00000000)
+          tr
+            td Jumlah<br>(dalam mata uang rekening tujuan)
+            td Rp 1.000.000,-
+          tr
+            td(colspan='2') Rekening Penerima
+          tr
+            td Dari daftar transfer
+            td Rekening Ibu (00000001)
+          tr
+            td(colspan='2') Opsi Transfer
+          tr
+            td Tanggal Transfer Sekarang
+            td 2 Desember 2016
+          tr
+            td Berita
+            td Bulanan Ibu
+          tr
+            td Email Penerima
+            td ibu@gmail.com
+
+        a.btn.btn-danger(href='/transfer.html') Batal
+        a.btn.btn-success(data-toggle='modal' data-target='#transaksi-berhasil') Konfirmasi
+
+  .modal.fade#transaksi-berhasil
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal')
+            span &times;
+          h4.modal-title Transaksi Favorit
+        .modal-body
+          h3.text-center Transfer
+          h2.text-center BERHASIL
+          h3.text-center Diproses
+        .modal-footer
+          a.btn.btn-default(href='/dashboard.html') Kembali ke Beranda

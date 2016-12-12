@@ -9,17 +9,18 @@ block content
         ol.breadcrumb
           li: a(href='/dashboard.html') Beranda
           li: a(href='#') Transaksi
-          li.active Pembayaran Finansial
+          li.active Pembayaran Utilitas
 
         div
           ul.nav.nav-tabs
-            li.active: a(href='#cc' data-toggle='tab') Kartu Kredit
-            li: a(href='#tax' data-toggle='tab') Pajak
-            li: a(href='#installment' data-toggle='tab') Angsuran
-            li: a(href='#insurance' data-toggle='tab') Asuransi
+            li.active: a(href='#phone' data-toggle='tab') Telepon
+            li: a(href='#gas' data-toggle='tab') Listrik &amp; Gas
+            li: a(href='#water' data-toggle='tab') PAM
+            li: a(href='#cable' data-toggle='tab') Kabel TV
+            li: a(href='#internet' data-toggle='tab') Internet
 
           div.tab-content
-            div.tab-pane.active#cc
+            div.tab-pane.active#phone
               form.form-horizontal
                 .form-group
                   label.col-md-2.control-label Dari Rekening
@@ -28,19 +29,16 @@ block content
                       option Rekening Utama (00000000)
 
                 .form-group
-                  label.col-md-2.control-label Nama Bank
+                  label.col-md-2.control-label Penyedia Jasa
                   .col-md-10
                     select.form-control
-                      option Bank Kota
-                      option Bank Desa
+                      option Telkomsel
+                      option Vodafone
+                      option Verizon
+                      option Vasilkom
 
                 .form-group
-                  label.col-md-2.control-label Nomor Kartu
-                  .col-md-10
-                    input.form-control(type='text' placeholder='    -    -    -    -')
-
-                .form-group
-                  label.col-md-2.control-label Jumlah
+                  label.col-md-2.control-label Nomor Telepon
                   .col-md-10
                     input.form-control(type='text')
 
@@ -57,9 +55,10 @@ block content
                       a.btn.btn-danger(href='/transfer.html') Batal
                       a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
 
-            div.tab-pane#tax
-            div.tab-pane#installment
-            div.tab-pane#insurance
+            div.tab-pane#gas
+            div.tab-pane#water
+            div.tab-pane#cable
+            div.tab-pane#internet
 
   .modal.fade#token
     .modal-dialog

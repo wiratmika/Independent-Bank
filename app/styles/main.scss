@@ -30,6 +30,10 @@ $icon-font-path: '../fonts/';
   }
 }
 
+#search {
+  margin-top: 2em;
+}
+
 .well {
   display: inline-block;
   width: 100%;
@@ -52,4 +56,12 @@ $icon-font-path: '../fonts/';
 
 .glyphicon-info-sign {
   font-size: 2em;
+}
+
+a.btn {
+  margin: 1em;
+}
+
+.button-transaction {
+  float: right;
 }

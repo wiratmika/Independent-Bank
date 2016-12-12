@@ -8,18 +8,15 @@ block content
       .col-md-8.col-md-offset-2
         ol.breadcrumb
           li: a(href='/dashboard.html') Beranda
-          li: a(href='#') Transaksi
-          li.active Pembayaran Finansial
+          li: a(href='/transaction.html') Transaksi
+          li.active Pembelian
 
         div
           ul.nav.nav-tabs
-            li.active: a(href='#cc' data-toggle='tab') Kartu Kredit
-            li: a(href='#tax' data-toggle='tab') Pajak
-            li: a(href='#installment' data-toggle='tab') Angsuran
-            li: a(href='#insurance' data-toggle='tab') Asuransi
+            li.active: a(href='#voucher' data-toggle='tab') Voucher HP
 
           div.tab-content
-            div.tab-pane.active#cc
+            div.tab-pane.active#phone
               form.form-horizontal
                 .form-group
                   label.col-md-2.control-label Dari Rekening
@@ -28,21 +25,34 @@ block content
                       option Rekening Utama (00000000)
 
                 .form-group
-                  label.col-md-2.control-label Nama Bank
+                  .radio.col-md-2
+                    label.control-label
+                      input(type='radio' name='type' checked)
+                      | Pembelian Langsung
+
+                .form-group
+                  label.col-md-2.control-label Penyedia Jasa
                   .col-md-10
                     select.form-control
-                      option Bank Kota
-                      option Bank Desa
+                      option Telkomsel
+                      option Vodafone
+                      option Verizon
+                      option Vasilkom
 
                 .form-group
-                  label.col-md-2.control-label Nomor Kartu
-                  .col-md-10
-                    input.form-control(type='text' placeholder='    -    -    -    -')
-
-                .form-group
-                  label.col-md-2.control-label Jumlah
+                  label.col-md-2.control-label Nomor Telepon
                   .col-md-10
                     input.form-control(type='text')
+
+                .form-group
+                  .radio.col-md-2
+                    label.control-label
+                      input(type='radio' name='type')
+                      | Pembelian Terdaftar
+                  .col-md-8
+                    select.form-control
+                      option Pulsa HP 1
+                      option Pulsa selingkuhan
 
                 .form-group
                   .col-md-offset-2.col-md-10
@@ -56,10 +66,6 @@ block content
                     .button-transaction
                       a.btn.btn-danger(href='/transfer.html') Batal
                       a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
-
-            div.tab-pane#tax
-            div.tab-pane#installment
-            div.tab-pane#insurance
 
   .modal.fade#token
     .modal-dialog

@@ -16,7 +16,7 @@ block content
             label.col-md-2.control-label Dari Rekening
             .col-md-10
               select.form-control
-                option Rekening Utama (00000000)
+                option
 
           .form-group
             label.col-md-2.control-label Jumlah
@@ -26,21 +26,24 @@ block content
 
           h4 Rekening Penerima
           .form-group
-            label.col-md-2.control-label
-              input(type='radio' name='receiver' checked)
-              | Nomor rekening
+            .radio.col-md-2
+              label.control-label
+                input(type='radio' name='receiver' checked)
+                | Nomor rekening
             .col-md-8
               input.form-control(placeholder='Nomor Rekening')
             .col-md-2
               input.form-control(placeholder='Keterangan')
-              label
-                input(type='checkbox')
-                | Simpan
+              .checkbox
+                label
+                  input(type='checkbox')
+                  | Simpan
 
           .form-group
-            label.col-md-2.control-label
-              input(type='radio' name='receiver')
-              | Dari Daftar Transfer
+            .radio.col-md-2
+              label.control-label
+                input(type='radio' name='receiver')
+                | Dari Daftar Transfer
             .col-md-10
               select.form-control
                 option Rekening Ibu (00000001)
@@ -48,16 +51,18 @@ block content
 
           h4 Opsi Transfer
           .form-group
-            label.col-md-2.control-label
-              input(type='radio' name='option' checked)
-              | Sekarang
+            .radio.col-md-2
+              label.control-label
+                input(type='radio' name='option' checked)
+                | Sekarang
             .col-md-10
               p.form-control-static 2 Desember 2015
 
           .form-group
-            label.col-md-2.control-label
-              input(type='radio' name='option')
-              | Terjadwal
+            .radio.col-md-2
+              label.control-label
+                input(type='radio' name='option')
+                | Terjadwal
             .col-md-10
               .input-group
                 span.input-group-addon
@@ -65,12 +70,13 @@ block content
                 input.form-control(type='text')
 
           .form-group
-            label.col-md-2.control-label
-              input(type='radio' name='option')
-              | Berkala
+            .radio.col-md-2
+              label.control-label
+                input(type='radio' name='option')
+                | Berkala
             .col-md-10
               .col-md-1
-                p Setiap
+                p.form-control-static Setiap
               .col-md-4
                 input.form-control(type='text')
               .col-md-5
@@ -109,8 +115,9 @@ block content
 
           .form-group
             .col-md-offset-2.col-md-10
-              a.btn.btn-danger(href='/transfer.html') Batal
-              a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
+              .button-transaction
+                a.btn.btn-danger(href='/transfer.html') Batal
+                a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
 
   .modal.fade#token
     .modal-dialog
@@ -127,18 +134,4 @@ block content
                 input.form-control(type='text')
             .form-group
               .col-md-8.col-md-offset-4
-                a.btn.btn-primary(data-dismiss='modal' data-toggle='modal' data-target='#transaksi-berhasil') Kirim
-
-  .modal.fade#transaksi-berhasil
-    .modal-dialog
-      .modal-content
-        .modal-header
-          button.close(type='button' data-dismiss='modal')
-            span &times;
-          h4.modal-title Transaksi Favorit
-        .modal-body
-          h3.text-center Transfer
-          h2.text-center BERHASIL
-          h3.text-center Diproses
-        .modal-footer
-          a.btn.btn-default(href='/dashboard.html') Kembali ke Beranda
+                a.btn.btn-primary(href='/transfer-success.html') Kirim

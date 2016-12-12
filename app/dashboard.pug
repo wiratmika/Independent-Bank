@@ -5,6 +5,11 @@ block content
 
   .container
     .row
+      .col-md-3.col-md-offset-9
+        form#search
+          .form-group.has-feedback
+            input.form-control(type='text' placeholder='Cari')
+            i.glyphicon.glyphicon-search.form-control-feedback
       .col-md-8.col-md-offset-2
         h2 Selamat datang di Mandiri internet, Niko Alhakim
         p Anda terakhir masuk pada 1 Desember 2016 pukul 00:00
@@ -25,12 +30,61 @@ block content
             span &times;
           h4.modal-title Aktivitas Transaksi
         .modal-body
-          form.form-inline
+          form.form-horizontal
             .form-group
-              .input-group
-                span.input-group-addon
-                  span.glyphicon.glyphicon-calendar
-                input.form-control(type='text' placeholder='Waktu awal')
+              .col-md-6
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-calendar
+                  input.form-control(type='text' placeholder='Waktu awal')
+              .col-md-6
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-calendar
+                  input.form-control(type='text' placeholder='Waktu akhir')
+
+            .form-group
+              .col-md-6
+                select.form-control
+                  option Jenis Transaksi...
+                  option Online
+                  option Offline
+                  option Ngasal
+
+              .col-md-6
+                a.btn.btn-primary#table-trigger Lihat
+
+          table.table.table-bordered.table-striped.table-hover#table-triggered(style='display: none;')
+            tr
+              th Waktu
+              th Aktivitas
+              th Jumlah
+              th Status<br>No Bukti
+            tr
+              td 2 Desember 2016 13:00
+              td Transfer Rekening Mandiri<br>23123123123<br>a/n Wiratmika
+              td Rp 100.000
+              td Berhasil 72ff493f
+            tr
+              td 2 Desember 2016 13:00
+              td Transfer Rekening Mandiri<br>23123123123<br>a/n Wiratmika
+              td Rp 100.000
+              td Berhasil 72ff493f
+            tr
+              td 2 Desember 2016 13:00
+              td Transfer Rekening Mandiri<br>23123123123<br>a/n Wiratmika
+              td Rp 100.000
+              td Berhasil 72ff493f
+            tr
+              td 2 Desember 2016 13:00
+              td Transfer Rekening Mandiri<br>23123123123<br>a/n Wiratmika
+              td Rp 100.000
+              td Berhasil 72ff493f
+            tr
+              td 2 Desember 2016 13:00
+              td Transfer Rekening Mandiri<br>23123123123<br>a/n Wiratmika
+              td Rp 100.000
+              td Berhasil 72ff493f
 
   .modal.fade#transaksi-favorit
     .modal-dialog
