@@ -21,87 +21,8 @@ block content
           .form-group
             label.col-md-3.control-label Jumlah
             .col-md-9
-              input.form-control(type='text' placeholder='Nominal')
+              input.form-control.currency(type='text' placeholder='Nominal')
               span.help-block dalam mata uang rekening tujuan
-
-          h4 Rekening Penerima
-          .form-group
-            .radio.col-md-3
-              label.control-label
-                input(type='radio' name='receiver' checked)
-                | Nomor rekening
-            .col-md-6
-              input.form-control(placeholder='Nomor Rekening')
-            .col-md-3
-              input.form-control(placeholder='Keterangan')
-              .checkbox
-                label
-                  input(type='checkbox')
-                  | Simpan
-
-          .form-group
-            .radio.col-md-3
-              label.control-label
-                input(type='radio' name='receiver')
-                | Dari Daftar Transfer
-            .col-md-9
-              select.form-control
-                option Rekening Ibu (00000001)
-                option Rekening Sekunder (00000002)
-
-          h4 Opsi Transfer
-          .form-group
-            .radio.col-md-3
-              label.control-label
-                input(type='radio' name='option' checked)
-                | Sekarang
-            .col-md-9
-              p.form-control-static 2 Desember 2015
-
-          .form-group
-            .radio.col-md-3
-              label.control-label
-                input(type='radio' name='option')
-                | Terjadwal
-            .col-md-9
-              .input-group
-                span.input-group-addon
-                  span.glyphicon.glyphicon-calendar
-                input.form-control(type='text')
-
-          .form-group
-            .radio.col-md-3
-              label.control-label
-                input(type='radio' name='option')
-                | Berkala
-            .col-md-9
-              .col-md-1
-                p.form-control-static Setiap
-              .col-md-4
-                input.form-control(type='text')
-              .col-md-5
-                select.form-control
-                  option Hari
-                  option Minggu
-                  option Bulan
-
-          .form-group
-            label.col-md-3.control-label
-              p Tanggal Transfer Pertama
-            .col-md-9
-              .input-group
-                span.input-group-addon
-                  span.glyphicon.glyphicon-calendar
-                input.form-control(type='text')
-
-          .form-group
-            label.col-md-3.control-label
-              p Tanggal Transfer Terakhir
-            .col-md-9
-              .input-group
-                span.input-group-addon
-                  span.glyphicon.glyphicon-calendar
-                input.form-control(type='text')
 
           .form-group
             label.col-md-3.control-label Berita
@@ -113,11 +34,96 @@ block content
             .col-md-9
               input.form-control(type='email' placeholder='Email penerima')
 
+          h4 Rekening Penerima
           .form-group
-            .col-md-offset-3.col-md-9
-              .button-transaction
-                a.btn.btn-danger(href='/transfer.html') Batal
-                a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
+            .radio.col-md-3
+              label.control-label
+                input(type='radio' value='langsung' name='receiver' checked)
+                | Nomor rekening
+            .receiver-options.langsung-options
+              .col-md-6
+                input.form-control(placeholder='Nomor Rekening')
+              .col-md-3
+                input.form-control(placeholder='Keterangan')
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    | Simpan
+
+          .form-group
+            .radio.col-md-3
+              label.control-label
+                input(type='radio' value='daftar' name='receiver')
+                | Dari Daftar Transfer
+            .receiver-options.daftar-options
+              .col-md-9
+                select.form-control
+                  option Rekening Ibu (00000001)
+                  option Rekening Sekunder (00000002)
+
+          h4 Opsi Transfer
+          .form-group
+            .radio.col-md-3
+              label.control-label
+                input(type='radio' name='transfer-type' value='sekarang' checked)
+                | Sekarang
+            .transfer-options.sekarang-options
+              .col-md-9
+                p.form-control-static 2 Desember 2016
+
+          .form-group
+            .radio.col-md-3
+              label.control-label
+                input(type='radio' value='terjadwal' name='transfer-type')
+                | Terjadwal
+            .transfer-options.terjadwal-options
+              .col-md-9
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-calendar
+                  input.form-control(type='text')
+
+          .form-group
+            .radio.col-md-3
+              label.control-label
+                input(type='radio' value='berkala' name='transfer-type')
+                | Berkala
+            .transfer-options.berkala-options
+              .col-md-9
+                .col-md-1
+                  p.form-control-static Setiap
+                .col-md-4
+                  input.form-control(type='text')
+                .col-md-5
+                  select.form-control
+                    option Hari
+                    option Minggu
+                    option Bulan
+
+          .transfer-options.berkala-options
+            .form-group
+              label.col-md-3.control-label
+                p Tanggal Transfer Pertama
+              .col-md-9
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-calendar
+                  input.form-control(type='text')
+
+            .form-group
+              label.col-md-3.control-label
+                p Tanggal Transfer Terakhir
+              .col-md-9
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-calendar
+                  input.form-control(type='text')
+
+            .form-group
+              .col-md-offset-3.col-md-9
+                .button-transaction
+                  a.btn.btn-danger(href='/transfer.html') Batal
+                  a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
 
   .modal.fade#token
     .modal-dialog

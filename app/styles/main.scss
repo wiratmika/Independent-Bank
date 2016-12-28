@@ -65,3 +65,23 @@ a.btn {
 .button-transaction {
   float: right;
 }
+
+.transfer-options {
+  display: none;
+
+  &.sekarang-options {
+    display: block;
+  }
+}
+
+.receiver-options {
+  display: none;
+
+  &.langsung-options {
+    display: block;
+  }
+}
+
+table.confirmation td:first-child {
+  font-weight: bold;
+}

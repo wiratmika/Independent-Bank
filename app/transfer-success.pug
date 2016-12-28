@@ -11,7 +11,10 @@ block content
           li: a(href='/transfer.html') Transfer
           li.active Transfer Antar Rekening Mandiri
 
-        table.table
+        table.table.confirmation
+          colgroup
+            col.bg-info
+            col
           tr
             td Dari rekening
             td Rekening Utama (00000000)
@@ -19,21 +22,23 @@ block content
             td Jumlah<br>(dalam mata uang rekening tujuan)
             td Rp 1.000.000,-
           tr
-            td(colspan='2') Rekening Penerima
-          tr
-            td Dari daftar transfer
-            td Rekening Ibu (00000001)
-          tr
-            td(colspan='2') Opsi Transfer
-          tr
-            td Tanggal Transfer Sekarang
-            td 2 Desember 2016
-          tr
             td Berita
             td Bulanan Ibu
           tr
             td Email Penerima
             td ibu@gmail.com
+          tr
+            td(colspan='2')
+              h4.text-center Rekening Penerima
+          tr
+            td Dari daftar transfer
+            td Rekening Ibu (00000001)
+          tr
+            td(colspan='2')
+              h4.text-center Opsi Transfer
+          tr
+            td Tanggal Transfer Sekarang
+            td 2 Desember 2016
 
         a.btn.btn-danger(href='/transfer.html') Batal
         a.btn.btn-success(data-toggle='modal' data-target='#transaksi-berhasil') Konfirmasi

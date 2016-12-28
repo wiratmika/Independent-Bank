@@ -32,10 +32,10 @@ block content
                   label.col-md-3.control-label Penyedia Jasa
                   .col-md-9
                     select.form-control
-                      option Telkomsel
-                      option Vodafone
-                      option Verizon
-                      option Vasilkom
+                      option Telkom Indonesia
+                      option Telkom Singapura
+                      option Telkom Zimbabwe
+                      option Telkom Venezuela
 
                 .form-group
                   label.col-md-3.control-label Nomor Telepon
@@ -44,15 +44,17 @@ block content
 
                 .form-group
                   .col-md-offset-3.col-md-9
-                    input(type='checkbox')
-                    | Simpan ke transaksi favorit
+                    .checkbox
+                      label
+                        input(type='checkbox')
+                        | Simpan ke transaksi favorit
 
                 .form-group
                   .col-md-3
                     span.glyphicon.glyphicon-info-sign(data-toggle='tooltip' data-placement='bottom' title='Keterangan: Berikut merupakan suatu keterangan hehe')
                   .col-md-9
                     .button-transaction
-                      a.btn.btn-danger(href='/transfer.html') Batal
+                      a.btn.btn-danger(href='/utility.html') Batal
                       a.btn.btn-success(data-toggle='modal' data-target='#token') Lanjutkan
 
             .tab-pane#gas
